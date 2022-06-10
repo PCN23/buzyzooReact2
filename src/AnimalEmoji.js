@@ -6,7 +6,7 @@ export default function AnimalEmoji({ animal }) {
       {animal === 'macaw' && '🦜'}
       {animal === 'sloth' && '🦥'}
       {animal === 'coati' && '🦝'}
-      {animal === 'toucans' && '../public/download.jpg'}
+      {animal === 'toucans' && <img src='./download.jpg'/>}
       {animal === 'crocodiles' && '🐊'}
     </div>
   );
