@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import './App.css';
+import OpenClosedSign from './OpenClosedSign';
 
 function App() {
 
 
   const [carSize, setCarSize] = useState(30);
   const [truckSize, setTruckSize] = useState(30);
+  const [zooIsOpen, setZooIsOpen] = useState(true);
 
   return (
     <div className="App">
@@ -22,6 +24,8 @@ function App() {
             <button onClick={() => setTruckSize(truckSize - 10)}>Shrink Parrot</button>
           </div>
         </div>
+        <OpenClosedSign zooIsOpen={zooIsOpen}/>
+        <button onClick={() => setZooIsOpen(!zooIsOpen)}>toggle zoo</button>
         
       </header>
     </div>
