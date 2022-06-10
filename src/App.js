@@ -5,10 +5,38 @@ import AnimalList from './AnimalList';
 
 function App() {
 
-
+  const [animals, setAnimals] = useState (['Scarlet macaw', 'Sloth', 'Coati', 'Toucans', 'Crocodiles']);
   const [carSize, setCarSize] = useState(30);
   const [truckSize, setTruckSize] = useState(30);
   const [zooIsOpen, setZooIsOpen] = useState(true);
+
+
+  function handleMacawClick() {
+    animals.push('macaw');
+    setAnimals(animals.slice());
+  }
+  function handleSlothClick() {
+    animals.push('sloth');
+    setAnimals(animals.slice());
+  }
+  function handleCoatiClick() {
+    animals.push('coati');
+    setAnimals(animals.slice());
+  }
+  function handleToucansClick() {
+    animals.push('toucans');
+    setAnimals(animals.slice());
+  }
+  function handleCrocodilesClick() {
+    animals.push('crocodiles');
+    setAnimals(animals.slice());
+  }
+  function handleRetireAnimal() {
+    animals.pop();
+    setAnimals(animals.slice());
+  }
+
+
 
   return (
     <div className="App">
@@ -27,12 +55,13 @@ function App() {
         </div>
         <OpenClosedSign zooIsOpen={zooIsOpen}/>
         <button onClick={() => setZooIsOpen(!zooIsOpen)}>toggle zoo</button>
-        <AnimalList />
-        <button>add scarlet macaw</button>
-        <button>add sloth</button>
-        <button>add Coati</button>
-        <button>add toucans</button>
-        <button>add crocodiles</button>
+        <AnimalList animals={animals}/>
+        <button onClick={handleMacawClick}>Add macaw</button>
+        <button onClick={handleSlothClick}>Add sloth</button>
+        <button onClick={handleCoatiClick}>Add coati</button>
+        <button onClick={handleToucansClick}>Add toucans</button>
+        <button onClick={handleCrocodilesClick}>Add crocodiles</button>
+        <button onClick={handleRetireAnimal}>Goodbye animal</button>      
       </header>
     </div>
   );
