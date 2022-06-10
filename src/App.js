@@ -1,17 +1,22 @@
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+
+  const [carSize, setCarSize] = useState(20);
+
   return (
     <div className="App">
       <header className="App-header">
         <div className='pokemon'>
           <div className='competitor'>
-            <button>Grow car</button>
-            <button>Shrink car</button>
+            <button onClick={() => setCarSize(carSize + 10)}>Grow Car</button>
+            <button>Shrink Car</button>
           </div>
           <div className='competitor'>
-            <button>Grow truck</button>
-            <button>Shrink truck</button>
+            <button>Grow Truck</button>
+            <button>Shrink Truck</button>
           </div>
         </div>
         
