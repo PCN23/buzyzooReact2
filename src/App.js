@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import OpenClosedSign from './OpenClosedSign';
+import AnimalList from './AnimalList';
 
 function App() {
 
@@ -26,7 +27,12 @@ function App() {
         </div>
         <OpenClosedSign zooIsOpen={zooIsOpen}/>
         <button onClick={() => setZooIsOpen(!zooIsOpen)}>toggle zoo</button>
-        
+        <AnimalList />
+        <button>add scarlet macaw</button>
+        <button>add sloth</button>
+        <button>add Coati</button>
+        <button>add toucans</button>
+        <button>add crocodiles</button>
       </header>
     </div>
   );
