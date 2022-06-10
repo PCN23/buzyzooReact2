@@ -46,6 +46,8 @@
 
 .competitor {
   border: solid 1px white;
+  background-color: white;
+  text-decoration-color: black;
   margin: 20px;
 
 }
