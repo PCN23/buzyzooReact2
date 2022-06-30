@@ -1,5 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import AnimalEmoji from './AnimalEmoji';
+import App from './App';
 // import App from './App';
 
 // unit test
@@ -14,3 +15,19 @@ test('if we pass a invalid animal to AnimalEmoji, it should render an empty div'
   const crocodileElement = screen.queryByText('🐊');
   expect(crocodileElement).not.toBeInTheDocument();
 });
+
+test('if the user clicks on the crocodiles button, there should be one more crocodile on the screen.', () => {
+  render(<App />);
+  const crocodilesElementsAtLoad = screen.getByText(/crocodilesElementsAtLoad/i);
+  expect(crocodilesElementsAtLoad.length).toBeIn(1);
+
+  const crocodilesButton = screen.getAllByText(/Add crocodiles/i);
+
+  fireEvent.click(crocodilesButton);
+
+  const crocodilesElementsAfterClick = screen.
+    getAllByText(/🐊/i);
+
+  expect(crocodilesElementsAfterClick.length).toBe(2);
+});
+
