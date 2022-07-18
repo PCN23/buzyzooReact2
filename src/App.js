@@ -4,6 +4,8 @@ import OpenClosedSign from './OpenClosedSign';
 import AnimalList from './AnimalList';
 import TextField from '@material-ui/core/TextField';
 import CustomButton from './CustomButton';
+import MyTable from './MyTable';
+import MyCharts from './MyCharts';
 
 
 function App() {
@@ -44,6 +46,8 @@ function App() {
 
   return (
     <div className="App">
+      <MyTable />
+      <MyCharts />
       <h3>welcome to the {zooName} zoo</h3>
       <TextField id="filled-basic" label="Filled" variant="filled" onChange={ e => setZooName(e.target.value)} placeholder='Type zoo name here' />
       <header className="App-header">
