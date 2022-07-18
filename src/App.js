@@ -2,6 +2,9 @@ import { useState } from 'react';
 import './App.css';
 import OpenClosedSign from './OpenClosedSign';
 import AnimalList from './AnimalList';
+import TextField from '@material-ui/core/TextField';
+import CustomButton from './CustomButton';
+
 
 function App() {
 
@@ -9,6 +12,7 @@ function App() {
   const [carSize, setCarSize] = useState(30);
   const [truckSize, setTruckSize] = useState(30);
   const [zooIsOpen, setZooIsOpen] = useState(true);
+  const [zooName, setZooName] = useState('costa rica');
 
 
   function handleMacawClick() {
@@ -40,28 +44,30 @@ function App() {
 
   return (
     <div className="App">
+      <h3>welcome to the {zooName} zoo</h3>
+      <TextField id="filled-basic" label="Filled" variant="filled" onChange={ e => setZooName(e.target.value)} placeholder='Type zoo name here' />
       <header className="App-header">
         <div className='pokemon'>
           <div className='competitor'>
             <p style={{ fontSize: `${carSize}px` }}>🐝 : {carSize}</p>
-            <button onClick={() => setCarSize(carSize + 10)}>Grow Bee</button>
-            <button onClick={() => setCarSize(carSize - 10)}>Shrink Bee</button>
+            <CustomButton onClick={() => setCarSize(carSize + 10)}>Grow Bee</CustomButton>
+            <CustomButton onClick={() => setCarSize(carSize - 10)}>Shrink Bee</CustomButton>
           </div>
           <div className='competitor'>
             <p style={{ fontSize: `${truckSize}px` }}>🦜 : {truckSize}</p>
-            <button onClick={() => setTruckSize(truckSize + 10)}>Grow Parrot</button>
-            <button onClick={() => setTruckSize(truckSize - 10)}>Shrink Parrot</button>
+            <CustomButton onClick={() => setTruckSize(truckSize + 10)}>Grow Parrot</CustomButton>
+            <CustomButton onClick={() => setTruckSize(truckSize - 10)}>Shrink Parrot</CustomButton>
           </div>
         </div>
         <OpenClosedSign zooIsOpen={zooIsOpen}/>
-        <button onClick={() => setZooIsOpen(!zooIsOpen)}>toggle zoo</button>
+        <CustomButton onClick={() => setZooIsOpen(!zooIsOpen)}>toggle zoo</CustomButton>
         <AnimalList animals={animals}/>
-        <button onClick={handleMacawClick}>Add macaw</button>
-        <button onClick={handleSlothClick}>Add sloth</button>
-        <button onClick={handleCoatiClick}>Add coati</button>
-        <button onClick={handleToucansClick}>Add toucans</button>
-        <button onClick={handleCrocodilesClick}>Add crocodiles</button>
-        <button onClick={handleRetireAnimal}>Goodbye animal</button>      
+        <CustomButton onClick={handleMacawClick}>Add macaw</CustomButton>
+        <CustomButton onClick={handleSlothClick}>Add sloth</CustomButton>
+        <CustomButton onClick={handleCoatiClick}>Add coati</CustomButton>
+        <CustomButton onClick={handleToucansClick}>Add toucans</CustomButton>
+        <CustomButton onClick={handleCrocodilesClick}>Add crocodiles</CustomButton>
+        <CustomButton onClick={handleRetireAnimal}>Goodbye animal</CustomButton>      
       </header>
     </div>
   );
