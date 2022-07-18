@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import CustomButton from './CustomButton';
 import MyTable from './MyTable';
 import MyCharts from './MyCharts';
+import Admin from './Admin';
 
 
 function App() {
@@ -46,8 +47,9 @@ function App() {
 
   return (
     <div className="App">
-      <MyTable />
-      <MyCharts />
+      {/* <Admin /> */}
+      {/* <MyTable />
+      <MyCharts /> */}
       <h3>welcome to the {zooName} zoo</h3>
       <TextField id="filled-basic" label="Filled" variant="filled" onChange={ e => setZooName(e.target.value)} placeholder='Type zoo name here' />
       <header className="App-header">

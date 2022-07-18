@@ -1,5 +1,5 @@
 
-export const customers = [{ 'id':1, 'first_name':'Joete', 'last_name':'Nottle', 'email':'jnottle0@meetup.com', 'gender':'Female' },{ 'id':2, 'first_name':'Susi', 'last_name':'Cookney', 'email':'scookney1@ovh.net', 'gender':'Female' },
+export const customers = [{ 'id':1, 'first_name':'Joete', 'last_name':'Nottle', 'email':'jnottle0@meetup.com', 'gender':'Female' }, { 'id':2, 'first_name':'Susi', 'last_name':'Cookney', 'email':'scookney1@ovh.net', 'gender':'Female' },
   { 'id':3, 'first_name':'Moore', 'last_name':'Bilovus', 'email':'mbilovus2@cnbc.com', 'gender':'Male' },
   { 'id':4, 'first_name':'Mandel', 'last_name':'Francesco', 'email':'mfrancesco3@nyu.edu', 'gender':'Agender' },
   { 'id':5, 'first_name':'Marris', 'last_name':'Dear', 'email':'mdear4@cafepress.com', 'gender':'Bigender' },
